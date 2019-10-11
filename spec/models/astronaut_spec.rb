@@ -29,7 +29,7 @@ describe Astronaut, type: :model do
       gemini_8 = Mission.create(title: "Gemini 8", time_in_space: 1)
       neilapollo = AstronautMission.create(astronaut_id: neil.id, mission_id: apollo.id)
       neilgemini = AstronautMission.create(astronaut_id: neil.id, mission_id: gemini_8.id)
-      expect(neil.space_days(neil.id)).to eq(9)
+      expect(neil.space_days).to eq(9)
     end
   end
 end

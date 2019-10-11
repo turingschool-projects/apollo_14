@@ -7,8 +7,8 @@ class Astronaut < ApplicationRecord
     average(:age).round(1)
   end
 
-  def space_days(id)
-    astro_missions = AstronautMission.where(astronaut_id: id)
+  def space_days
+    astro_missions = AstronautMission.where(astronaut_id: self.id)
     missions = Mission.find(astro_missions.pluck(:mission_id))
     missions.pluck(:time_in_space).sum
   end
