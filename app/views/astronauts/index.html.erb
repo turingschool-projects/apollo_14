@@ -1,5 +1,6 @@
-<h1>Astronauts</h1>
+<h1><u>Astronauts</u></h1>
 <hr>
+<h2>Astronauts</h2>
 <% @astronauts.each do |astronaut| %>
   <section id = "astronaut-<%="#{astronaut.id}"%>">
     <p>Name: <%= astronaut.name %></p>
@@ -8,4 +9,12 @@
     <hr>
   </section>
   <p>Average Age: <%= @astronauts.avg_age %></p>
+<% end %>
+<h2>Missions</h2>
+<% @missions.each do |mission| %>
+  <section id = "mission-<%= "#{mission.id}"%>">
+    <p>Title: <%= mission.title %></p>
+    <p>Time in Space: <%= mission.time_in_space %></p>
+    <hr>
+  </section>
 <% end %>

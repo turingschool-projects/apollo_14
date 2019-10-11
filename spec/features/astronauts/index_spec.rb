@@ -6,6 +6,8 @@ RSpec.describe "As a visitor" do
       @neil = Astronaut.create(name: "Neil Armstrong", age: 37, job: "Commander")
       @buzz = Astronaut.create(name: "Buzz Aldrin", age: 34, job: "Lunar Module Pilot")
       @apollo = Mission.create(title: "Apollo 11", time_in_space: 8)
+      @gemini_8 = Mission.create(title: "Gemini 8", time_in_space: 1)
+      @gemini_12 = Mission.create(title: "Gemini 12", time_in_space: 4)
     end
 
     it "I see a list of all astronauts' names, ages, and jobs" do
@@ -33,7 +35,30 @@ RSpec.describe "As a visitor" do
       visit '/astronauts'
 
       expect(page).to have_content("Average Age: #{Astronaut.avg_age}")
+    end
 
+    it "Has a list of all missions' titles and time in space" do
+      visit '/astronauts'
+
+      within("#mission-#{@apollo.id}") do
+        expect(page).to have_content(@apollo.title)
+        expect(page).to have_content(@apollo.time_in_space)
+      end
+
+      within("#mission-#{@apollo.id}") do
+        expect(page).to have_content(@apollo.title)
+        expect(page).to have_content(@apollo.time_in_space)
+      end
+
+      within("#mission-#{@gemini_8.id}") do
+        expect(page).to have_content(@gemini_8.title)
+        expect(page).to have_content(@gemini_8.time_in_space)
+      end
+
+      within("#mission-#{@gemini_12.id}") do
+        expect(page).to have_content(@gemini_12.title)
+        expect(page).to have_content(@gemini_12.time_in_space)
+      end
     end
 
 
