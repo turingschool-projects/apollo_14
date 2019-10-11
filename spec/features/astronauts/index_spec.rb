@@ -11,7 +11,6 @@ RSpec.describe "As a visitor" do
     it "I see a list of all astronauts' names, ages, and jobs" do
 
       visit '/astronauts'
-      save_and_open_page
 
       within("#astronaut-#{@neil.id}") do
         expect(page).to have_content(@neil.name)
@@ -28,6 +27,13 @@ RSpec.describe "As a visitor" do
 
         expect(page).to_not have_content(@neil.name)
       end
+    end
+
+    it "I see an average age of all astronauts on the page" do
+      visit '/astronauts'
+
+      expect(page).to have_content("Average Age: #{Astronaut.avg_age}")
+
     end
 
 
