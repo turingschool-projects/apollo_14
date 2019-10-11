@@ -21,4 +21,15 @@ describe Astronaut, type: :model do
 
     end
   end
+
+  describe 'Instance methods' do
+    it "Can calculate each astronauts days in space" do
+      neil = Astronaut.create(name: "Neil Armstrong", age: 37, job: "Commander")
+      apollo = Mission.create(title: "Apollo 11", time_in_space: 8)
+      gemini_8 = Mission.create(title: "Gemini 8", time_in_space: 1)
+      neilapollo = AstronautMission.create(astronaut_id: neil.id, mission_id: apollo.id)
+      neilgemini = AstronautMission.create(astronaut_id: neil.id, mission_id: gemini_8.id)
+      expect(neil.space_days(neil.id)).to eq(9)
+    end
+  end
 end

@@ -6,6 +6,7 @@
     <p>Name: <%= astronaut.name %></p>
     <p>Age: <%= astronaut.age %></p>
     <p>Job: <%= astronaut.job %></p>
+    <p>Days in Space: <%= astronaut.space_days(astronaut.id) %></p>
     <hr>
   </section>
   <p>Average Age: <%= @astronauts.avg_age %></p>

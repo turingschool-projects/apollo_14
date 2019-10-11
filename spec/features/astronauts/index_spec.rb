@@ -61,7 +61,21 @@ RSpec.describe "As a visitor" do
       end
     end
 
+    it "Each astronaut box also displays their total time in space" do
+      neilapollo = AstronautMission.create(astronaut_id: @neil.id, mission_id: @apollo.id)
+      neilgemini = AstronautMission.create(astronaut_id: @neil.id, mission_id: @gemini_8.id)
+      buzzapollo = AstronautMission.create(astronaut_id: @buzz.id, mission_id: @apollo.id)
+      buzzapollo = AstronautMission.create(astronaut_id: @buzz.id, mission_id: @gemini_12.id)
 
+      visit '/astronauts'
 
+      within("#astronaut-#{@neil.id}") do
+        expect(page).to have_content("Days in Space: 9")
+      end
+
+      within("#astronaut-#{@buzz.id}") do
+        expect(page).to have_content("Days in Space: 12")
+      end
+    end
   end
 end
