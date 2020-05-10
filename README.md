@@ -2,7 +2,7 @@
 
 This Rails application is intended to be used as an opportunity for students to measure their own learning from week 2 of module 2 of the back-end program of the Turing School of Software & Design.
 
-Fork this repository and clone your newly created repository. At the end of one hour, push your code to your repository and create a pull request to this repository.
+Fork this repository and clone your newly created repository. 
 
 ## Be sure to read all user stories BEFORE beginning your work
 
@@ -14,12 +14,6 @@ Fork this repository and clone your newly created repository. At the end of one 
      - `bundle install`, 
      - `rake db:{drop,create,migrate,seed}`
      
-## Submission
-
-When you have completed this challenge, submit by creating a Pull Request back to the turingschool-projects repo.  Include the following information:
-- Your Name
-- A reflection on how you did with this challenge, including particularly fun or difficutlt parts
-
 ## Requirements
 
 - TDD all new work; you may postpone model tests for attribute validations ONLY; any model METHODS you write must be fully tested.
