@@ -47,5 +47,9 @@ describe "As a visitor" do
         expect(page).to have_content("Job: #{@astro4.job}")
       end
     end
+
+    it 'I see the average age of all astronauts.' do
+      expect(page).to have_content("Average age: #{Astronaut.average_age}")
+    end
   end
 end
