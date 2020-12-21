@@ -20,7 +20,9 @@ describe "As a visitor" do
 
     it "I see a list of astronauts with the following info:" do
       visit astronauts_path
-      save_and_open_page
+      
+      expect(page).to have_content("Astronauts")
+
       within("#astronaut-#{@astro1.id}") do
         expect(page).to have_content(@astro1.name)
         expect(page).to have_content("Age: #{@astro1.age}")
