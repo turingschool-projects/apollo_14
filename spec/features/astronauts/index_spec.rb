@@ -20,7 +20,7 @@ describe "As a visitor" do
 
     it "I see a list of astronauts with the following info:" do
       visit astronauts_path
-
+      save_and_open_page
       within("#astronaut-#{@astro1.id}") do
         expect(page).to have_content(@astro1.name)
         expect(page).to have_content("Age: #{@astro1.age}")
@@ -40,9 +40,9 @@ describe "As a visitor" do
       end
 
       within("#astronaut-#{@astro4.id}") do
-        expect(page).to have_content(@astro3.name)
-        expect(page).to have_content("Age: #{@astro3.age}")
-        expect(page).to have_content("Job: #{@astro3.job}")
+        expect(page).to have_content(@astro4.name)
+        expect(page).to have_content("Age: #{@astro4.age}")
+        expect(page).to have_content("Job: #{@astro4.job}")
       end
     end
   end
