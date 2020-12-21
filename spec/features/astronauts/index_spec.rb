@@ -49,6 +49,8 @@ describe "As a visitor" do
     end
 
     it 'I see the average age of all astronauts.' do
+      visit astronauts_path
+      
       expect(page).to have_content("Average age: #{Astronaut.average_age}")
     end
   end
