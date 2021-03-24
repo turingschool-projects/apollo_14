@@ -1,0 +1,12 @@
+<center>
+<h1> Apollo 14 Astronauts </h1>
+</center>
+<hr>
+<% @astronauts.each do |astronaut| %>
+<section class="astronaut">
+  <h3 class='name'><%= astronaut.name %></h3>
+  <p class='age'>Age: <%= astronaut.age %></p>
+  <p class='job'>Job: <%= astronaut.job %></p>
+</section>
+<hr>
+<% end %>
