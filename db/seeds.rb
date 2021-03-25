@@ -10,3 +10,7 @@ require 'factory_bot_rails'
 5.times do
   FactoryBot.create :astronaut
 end
+
+5.times do 
+  FactoryBot.create :mission
+end

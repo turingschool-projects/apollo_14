@@ -8,11 +8,18 @@ RSpec.describe 'Astronaut Index Page' do
     @astro3 = @astronaut_list.third
     @astro4 = @astronaut_list.fourth
     @astro5 = @astronaut_list.fifth
-    # @astronaut1 = create(:astronaut)
-    # @astronaut2 = create(:astronaut)
-    # @astronaut3 = create(:astronaut)
-    # @astronaut4 = create(:astronaut)
-    # @astronaut5 = create(:astronaut)
+    
+    @mission1 = Mission.create!(title: "Zulu", time_in_space: 444)
+    @mission2 = Mission.create!(title: "Moon", time_in_space: 8854)
+    @mission3 = Mission.create!(title: "Sagittarius A", time_in_space: 9965)
+
+    AstronautMission.create(astronaut_id: @astro1.id, mission_id: @mission1.id)
+    AstronautMission.create(astronaut_id: @astro1.id, mission_id: @mission2.id)
+    AstronautMission.create(astronaut_id: @astro1.id, mission_id: @mission3.id)
+    AstronautMission.create(astronaut_id: @astro2.id, mission_id: @mission1.id)
+    AstronautMission.create(astronaut_id: @astro2.id, mission_id: @mission2.id)
+    AstronautMission.create(astronaut_id: @astro2.id, mission_id: @mission3.id)
+    AstronautMission.create(astronaut_id: @astro3.id, mission_id: @mission1.id)
   end
 
   it "can see a list of astronauts with name, age, job" do
@@ -34,5 +41,15 @@ RSpec.describe 'Astronaut Index Page' do
     all_astros = Astronaut.all
     average_age = all_astros.average_age 
     expect(page).to have_content("Average age of all astronauts: #{average_age}")
+  end
+
+  it 'can see a list of an astronauts missions in alphabetical order' do
+    visit astronauts_path
+    expect(current_path).to eq(astronauts_path)
+    
+    within(first('.astronaut')) do 
+      expect(@mission2.title).to appear_before(@mission3.title)
+      expect(@mission3.title).to appear_before(@mission1.title)
+    end
   end
 end

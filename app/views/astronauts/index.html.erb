@@ -8,6 +8,10 @@
   <h3 class='name'><%= astronaut.name %></h3>
   <p class='age'>Age: <%= astronaut.age %></p>
   <p class='job'>Job: <%= astronaut.job %></p>
+  <p class='mission'>Missions:</p>
+    <% astronaut.sorted_missions.each do |mission| %>
+      <%= mission.title %>
+  <% end %>
 </section>
 <hr>
 <% end %>

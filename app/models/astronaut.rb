@@ -7,4 +7,9 @@ class Astronaut < ApplicationRecord
   def self.average_age
     average(:age).to_f.round(2)
   end
+
+  def sorted_missions
+    # require 'pry'; binding.pry
+    missions.order('title')
+  end
 end
