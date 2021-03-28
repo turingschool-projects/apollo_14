@@ -3,4 +3,8 @@ class Mission < ApplicationRecord
 
   has_many :astronaut_missions
   has_many :astronauts, through: :astronaut_missions
+
+  def self.total_time_in_space
+    sum(:time_in_space)
+  end
 end
