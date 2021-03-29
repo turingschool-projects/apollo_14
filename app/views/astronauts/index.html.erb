@@ -11,7 +11,7 @@
   <p> Total Time in Space: <%= astronaut.missions.total_time_in_space %></p>
   <p class='mission'><u>Missions:</u></p>
     <% astronaut.sorted_missions.each do |mission| %>
-      <p><%= mission.title %></p>
+      <li><%= mission.title %></li>
   <% end %>
 </section>
 <hr>

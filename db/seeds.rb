@@ -27,12 +27,12 @@ require 'factory_bot_rails'
 
 # astronaut = FactoryBot.create(:astronaut)
 
-# astronaut_list = FactoryBot.create_list(:astronaut, 5)
-# astro1 = astronaut_list.first
-# astro2 = astronaut_list.second
-# astro3 = astronaut_list.third
-# astro4 = astronaut_list.fourth
-# astro5 = astronaut_list.fifth
+astronaut_list = FactoryBot.create_list(:astronaut, 5)
+astro1 = astronaut_list.first
+astro2 = astronaut_list.second
+astro3 = astronaut_list.third
+astro4 = astronaut_list.fourth
+astro5 = astronaut_list.fifth
 
 # astro1 = FactoryBot.create(:astronaut)
 # astro2 = FactoryBot.create(:astronaut)
@@ -40,19 +40,19 @@ require 'factory_bot_rails'
 # astro4 = FactoryBot.create(:astronaut)
 # astro5 = FactoryBot.create(:astronaut)
 
-# mission1 = Mission.create(title: "Zulu", time_in_space: 444)
-# mission2 = Mission.create(title: "Moon", time_in_space: 8854)
-# mission3 = Mission.create(title: "Sagittarius A", time_in_space: 9965)
+mission1 = Mission.create(title: "Zulu", time_in_space: 444)
+mission2 = Mission.create(title: "Moon", time_in_space: 8854)
+mission3 = Mission.create(title: "Sagittarius A", time_in_space: 9965)
 
-# AstronautMission.create(astronaut_id: astro1.id, mission_id: mission1.id)
-# AstronautMission.create(astronaut_id: astro1.id, mission_id: mission2.id)
-# AstronautMission.create(astronaut_id: astro1.id, mission_id: mission3.id)
-# AstronautMission.create(astronaut_id: astro2.id, mission_id: mission1.id)
-# AstronautMission.create(astronaut_id: astro2.id, mission_id: mission2.id)
-# AstronautMission.create(astronaut_id: astro2.id, mission_id: mission3.id)
-# AstronautMission.create(astronaut_id: astro3.id, mission_id: mission1.id)
+AstronautMission.create(astronaut_id: astro1.id, mission_id: mission1.id)
+AstronautMission.create(astronaut_id: astro1.id, mission_id: mission2.id)
+AstronautMission.create(astronaut_id: astro1.id, mission_id: mission3.id)
+AstronautMission.create(astronaut_id: astro2.id, mission_id: mission1.id)
+AstronautMission.create(astronaut_id: astro2.id, mission_id: mission2.id)
+AstronautMission.create(astronaut_id: astro2.id, mission_id: mission3.id)
+AstronautMission.create(astronaut_id: astro3.id, mission_id: mission1.id)
 
 
-5.times do
-  AstronautMission.create(astronaut: FactoryBot.create(:astronaut), mission: FactoryBot.create(:mission))
-end
+# 5.times do
+#   AstronautMission.create(astronaut: FactoryBot.create(:astronaut), mission: FactoryBot.create(:mission))
+# end
