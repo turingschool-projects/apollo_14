@@ -9,7 +9,6 @@ class Astronaut < ApplicationRecord
   end
 
   def sorted_missions
-    # require 'pry'; binding.pry
     missions.order('title')
   end
 end
