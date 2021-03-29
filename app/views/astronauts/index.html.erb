@@ -9,9 +9,9 @@
   <p class='age'>Age: <%= astronaut.age %></p>
   <p class='job'>Job: <%= astronaut.job %></p>
   <p> Total Time in Space: <%= astronaut.missions.total_time_in_space %></p>
-  <p class='mission'>Missions: </p>
+  <p class='mission'><u>Missions:</u></p>
     <% astronaut.sorted_missions.each do |mission| %>
-      <%= mission.title %>
+      <p><%= mission.title %></p>
   <% end %>
 </section>
 <hr>
