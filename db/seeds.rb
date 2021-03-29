@@ -7,10 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'factory_bot_rails'
 
-5.times do
-  FactoryBot.create :astronaut
+7.times do
+  FactoryBot.create :astronaut_mission
 end
 
-5.times do 
-  FactoryBot.create :mission
-end
+astronaut1 = create(:astronaut)
+astronaut.missions = create_list(:mission, 3)
+
+
+# 5.times do
+#   FactoryBot.create :astronaut
+# end
+
+# 5.times do
+#   FactoryBot.create :mission
+# end
