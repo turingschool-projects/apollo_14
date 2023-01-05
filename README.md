@@ -93,6 +93,6 @@ As a visitor,
 When I visit an astronaut's show page (/astronauts/:id)
 I see a form to add a mission to this astronaut
 When I fill out the form with an ID of an existing mission
-I am redirected back tot he Astronaut's show page
+I am redirected back to the Astronaut's show page
 Where I see the new mission's name listed. 
 ```
