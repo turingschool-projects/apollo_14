@@ -35,7 +35,7 @@ Fork this repository and clone your newly created repository.
 User Story 1 of 4
 
 As a visitor,
-When I visit '/astronauts'
+When I visit the Astronauts index page ('/astronauts')
 I see a list of astronauts with the following info:
 - Name
 - Age
@@ -48,7 +48,7 @@ I see a list of astronauts with the following info:
 User Story 2 of 4
 
 As a visitor,
-When I visit '/astronauts'
+When I visit the Astronauts index page ('/astronauts')
 I see the average age of all astronauts.
 
 (e.g. "Average Age: 34")
@@ -58,7 +58,7 @@ I see the average age of all astronauts.
 User Story 3 of 4
 
 As a visitor,
-When I visit '/astronauts'
+When I visit the Astronauts index page ('/astronauts')
 I see a list of the space missions' in alphabetical order for each astronaut.
 
 (e.g "Apollo 13"
@@ -70,7 +70,29 @@ I see a list of the space missions' in alphabetical order for each astronaut.
 User Story 4 of 4
 
 As a visitor,
-When I visit '/astronauts'
+When I visit the Astronauts index page ('/astronauts')
 I see the total time in space for each astronaut.
 (e.g. "Name: Neil Armstrong, Age: 37, Job: Commander, Total Time in Space: 760 days")
+```
+
+```
+Extension 1
+
+As a visitor, 
+When I visit an astronaut's show page (/astronauts/:id)
+I see the name of that astronaut 
+And a list of the missions this astronaut has been on.
+(e.g. Neil Armstrong
+Missions: Apollo 13, Capricorn 4)
+```
+
+```
+Extension 2
+
+As a visitor, 
+When I visit an astronaut's show page (/astronauts/:id)
+I see a form to add a mission to this astronaut
+When I fill out the form with an ID of an existing mission
+I am redirected back tot he Astronaut's show page
+Where I see the new mission's name listed. 
 ```
