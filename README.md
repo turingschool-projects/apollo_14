@@ -12,7 +12,7 @@ Fork this repository and clone your newly created repository.
 - Clone down **your** forked repository
 - Perform the usual setup steps after cloning a Rails application:
      - `bundle install`, 
-     - `rake db:{drop,create,migrate,seed}`
+     - `rails db:{drop,create,migrate,seed}`
      
 ## Requirements
 
